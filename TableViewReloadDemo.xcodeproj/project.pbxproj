@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2062AB1695025A2765EAD781 /* Pods_TableViewReloadDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B11E5D0C743124523A3F919 /* Pods_TableViewReloadDemo.framework */; };
+		AE615BEF269D8E2100B0AA7B /* EurekaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE615BEE269D8E2100B0AA7B /* EurekaDataSource.swift */; };
+		AE615BF3269DA35500B0AA7B /* SwiftUIDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE615BF2269DA35500B0AA7B /* SwiftUIDataController.swift */; };
 		AE6865B2269BEBC500E458F3 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6865B1269BEBC500E458F3 /* SwiftUIView.swift */; };
 		AE6865B4269C44FF00E458F3 /* DataSourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6865B3269C44FF00E458F3 /* DataSourceController.swift */; };
 		AEA54F372693F8EF0084AD7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA54F362693F8EF0084AD7E /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		8B11E5D0C743124523A3F919 /* Pods_TableViewReloadDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableViewReloadDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE615BEE269D8E2100B0AA7B /* EurekaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaDataSource.swift; sourceTree = "<group>"; };
+		AE615BF2269DA35500B0AA7B /* SwiftUIDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDataController.swift; sourceTree = "<group>"; };
 		AE6865B1269BEBC500E458F3 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		AE6865B3269C44FF00E458F3 /* DataSourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceController.swift; sourceTree = "<group>"; };
 		AEA54F332693F8EF0084AD7E /* TableViewReloadDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewReloadDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE615BED269D854100B0AA7B /* Eureka */ = {
+			isa = PBXGroup;
+			children = (
+				AEA54F4A2693FDFA0084AD7E /* EurekaTableVC.swift */,
+				AE615BEE269D8E2100B0AA7B /* EurekaDataSource.swift */,
+			);
+			path = Eureka;
+			sourceTree = "<group>";
+		};
+		AE615BF1269DA24000B0AA7B /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				AE6865B1269BEBC500E458F3 /* SwiftUIView.swift */,
+				AE615BF2269DA35500B0AA7B /* SwiftUIDataController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		AE6865B5269C450A00E458F3 /* Diff */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +119,12 @@
 		AEA54F352693F8EF0084AD7E /* TableViewReloadDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AE615BF1269DA24000B0AA7B /* SwiftUI */,
+				AE615BED269D854100B0AA7B /* Eureka */,
 				AE6865B5269C450A00E458F3 /* Diff */,
 				AEA54F362693F8EF0084AD7E /* AppDelegate.swift */,
 				AEA54F382693F8EF0084AD7E /* SceneDelegate.swift */,
 				AEA54F3A2693F8EF0084AD7E /* TabViewController.swift */,
-				AEA54F4A2693FDFA0084AD7E /* EurekaTableVC.swift */,
-				AE6865B1269BEBC500E458F3 /* SwiftUIView.swift */,
 				AEA54F3C2693F8EF0084AD7E /* Main.storyboard */,
 				AEA54F3F2693F8F10084AD7E /* Assets.xcassets */,
 				AEA54F412693F8F10084AD7E /* LaunchScreen.storyboard */,
@@ -226,6 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEA54F4B2693FDFA0084AD7E /* EurekaTableVC.swift in Sources */,
+				AE615BEF269D8E2100B0AA7B /* EurekaDataSource.swift in Sources */,
+				AE615BF3269DA35500B0AA7B /* SwiftUIDataController.swift in Sources */,
 				AEA54F4D2693FE130084AD7E /* DataSourceDiffTableVC.swift in Sources */,
 				AE6865B2269BEBC500E458F3 /* SwiftUIView.swift in Sources */,
 				AEA54F3B2693F8EF0084AD7E /* TabViewController.swift in Sources */,

@@ -20,7 +20,6 @@ class DataSourceDiffTableVC: UIViewController {
     lazy var dataSource = UITableViewDiffableDataSource<DiffSection, Message>(tableView: tableView) {
         let cell = $0.dequeueReusableCell(withIdentifier: DataSourceDiffTableVC.reuseIdentifier, for: $1)
         cell.textLabel?.text = "\($2.userName): \($2.msgContent)"
-        cell.textLabel?.numberOfLines = 0
         return cell
     }
     
