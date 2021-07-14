@@ -47,16 +47,15 @@ class DataSourceController {
 
     @objc func mockRandomAddMsgUpdate() {
         let newIndex = Int.random(in: 0..<allMockMsg.count)
-        let item = Message(userName: "name:\(newIndex)", msgContent: "content message:\(newIndex)")
-
-        displayMsg.append(item)
+        let item = Message(userName: "new:\(newIndex)", msgContent: "new message:\(newIndex)")
+        displayMsg.insert(item, at: Int.random(in: 0...displayMsg.count))
         _didChange.send(displayMsg)
     }
 
     @objc func mockRandomChangeMsgUpdate() {
         let newIndex = Int.random(in: 0..<displayMsg.count)
         let contentIndex = Int.random(in: 0..<displayMsg.count)
-        displayMsg[newIndex] = Message(userName: "newName:\(contentIndex)", msgContent: "new content message:\(contentIndex)")
+        displayMsg[newIndex] = Message(userName: "update:\(contentIndex)", msgContent: "update content message:\(contentIndex)")
         _didChange.send(displayMsg)
     }
 }

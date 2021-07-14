@@ -63,10 +63,10 @@ class EurekaDataSource {
         name.value = randomStr()
         name.updateCell()
     }
+}
 
-    func randomStr() -> String {
-        let arr = "mockRandomChangeMsgUpdate".map { "\($0)" }
-        let index = Int.random(in: 0..<arr.count)
-        return arr[0..<max(index,1)].joined()
-    }
+func randomStr() -> String {
+    let arr = "mockRandomChangeMsgUpdate".map { "\($0)" }
+    let index = Int.random(in: 0..<arr.count)
+    return arr[0..<max(index,1)].joined()
 }

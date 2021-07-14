@@ -25,6 +25,7 @@ class TabViewController: UITabBarController {
 
         let diffVC = UINavigationController(rootViewController:DataSourceDiffTableVC()).then { $0.tabBarItem.title = "DiffDataSource" }
         let swiftVC = UIHostingController(rootView: SwiftUIView())
+        swiftVC.tabBarItem.title = "SwiftUI"
 
         viewControllers? += [diffVC, swiftVC]
         setViewControllers(viewControllers, animated: true)
