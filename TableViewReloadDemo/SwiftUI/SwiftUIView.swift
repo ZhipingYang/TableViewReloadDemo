@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-extension String: Identifiable {
-    public var id: String {
-        return self
-    }
-}
+//extension String: Identifiable {
+//    public var id: String {
+//        return self
+//    }
+//}
 
 struct Model: Identifiable {
     var title: String
     var subtitle: String
-//    var id = UUID()
-    var id: String { title + subtitle }
+    var id = UUID()
+//    var id: String { title + subtitle }
 }
 
 struct RCBarButtionItems: View {
@@ -38,12 +38,13 @@ struct SwiftUIView: View {
     @State var models = (0...3).map { Model(title: "title", subtitle: "subtitle:\($0)") }
 
     var body: some View {
-        NavigationView {
+        print("SwiftUIView pre-draw")
+        return NavigationView {
             RCListView(models: $models)
                 .navigationBarTitle(Text("SwiftUI"))
-                .navigationBarItems(trailing: RCBarButtionItems.init(update: {
+                .navigationBarItems(trailing: RCBarButtionItems(update: {
                     models[0].subtitle = randomStr()
-//                    models[0].id = UUID()
+                    // models[0].id = UUID()
                     print("update action")
                 }, add: {
                     let new = Model(title: "new", subtitle: "new subtitle:\(models.count)")
@@ -61,19 +62,22 @@ struct RCListView: View {
         print("RCListView pre-draw")
         return List {
             ForEach(models) { model in
-                RCListCell(model: model)
+                let index = models.firstIndex { $0.id == model.id }
+                RCListCell(model: $models[index ?? 0])
             }
         }.animation(.easeInOut)
     }
 }
 
 struct RCListCell: View {
-    var model: Model
+    @Binding var model: Model
 
     var body: some View {
-        print("RCListView pre-draw")
+        print("RCListCell pre-draw")
         return VStack(alignment: .leading) {
-            Text(model.title)
+            Button(model.title) {
+                model.subtitle = randomStr()
+            }
             Spacer()
             Text(model.subtitle)
                 .foregroundColor(.gray)
@@ -84,5 +88,6 @@ struct RCListCell: View {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftUIView()
+            .previewDevice(nil)
     }
 }
